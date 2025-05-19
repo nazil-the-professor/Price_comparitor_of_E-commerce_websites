@@ -1,0 +1,107 @@
+/* Universal Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f400;
+  margin: 0;
+  padding: 0;
+  color: #efe5e5;
+}
+
+/* Custom CSS for the Navbar */
+.navbar {
+  background-color: #343a4000 !important; /* Dark background */
+  border-bottom: 4px solid #f8f9fa69; /* Adding a bottom border for a clean look */
+}
+
+.navbar-brand {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2.0rem;
+  font-weight: bold;
+  color: #f8f9fa !important; /* Light color for the brand name */
+  letter-spacing: 1px; /* Spacing between letters */
+}
+
+.navbar-toggler {
+  border-color: #5c81a6; /* White color for the toggle button */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f8f9fa' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  /* Custom white color for the hamburger icon */
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #f8f9fa; /* Light color for the navigation links */
+  padding-left: 15px;
+  font-weight: bold;
+  font-size: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-right: 15px;
+  transition: color 0.3s ease; /* Smooth transition when hovering */
+}
+
+.navbar-nav .nav-item .nav-link.active {
+  color: #ffc107 !important; /* Active link color (yellow) */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ffc107; /* Hover effect for links */
+}
+
+.navbar-nav .nav-item .nav-link b {
+  font-weight: bold;
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.text-center{
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 270%;
+}
+
+/* Form Styles (for index.html) */
+form {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-top: 20px;
+  background-color: #a8373700;
+  color: #05def6;
+  width: 100%;
+  padding: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 230%;
+}
+
+textarea {
+  width: 40%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da00;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #00b30f;
+}

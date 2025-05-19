@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Comparison Results</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+
+        
+         body {
+            font-family: 'Poppins', sans-serif;
+            background: url('../static/Images/1we.jpg') no-repeat center center/cover;
+            color: #892f2f;
+            min-height: 100vh;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .table-container {
+            margin: 20px auto;
+            max-width: 90%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+        }
+        table {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .cheapest {
+            font-weight: bold;
+            color: lime;
+        }
+        .btn-back {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn-back:hover {
+            background-color: #218838;
+        }
+        .btn-primary {
+            transition: 0.3s;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+        .btn-custom {
+            background: #f39c12;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn-custom:hover {
+            background: #e67e22;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .table-container {
+                padding: 10px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center text-white bg-dark p-3 rounded"><i class="fas fa-shopping-cart"></i> <b>Price Comparison Of The Product</b></h1><br>
+        <div class="text-center mb-3">
+            <a href="index.htm" class="btn btn-custom"><i class="fas fa-search"></i> Search Again</a>
+        </div>
+
+    <!-- Amazon Table -->
+    <div class="table-container">
+        <h2 class="text-center text-primary"><i class="fab fa-amazon"></i> <b>Amazon Products</b></h2>
+        <table class="table table-striped table-hover text-white">
+            <thead class="table-dark">
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Reviews</th>
+                    <th>Discount</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comparison in comparisons %}
+                <tr>
+                    <td>{{ comparison.product }}</td>
+                    <td>₹{{ comparison.amazon_price }}</td>
+                    <td>{{ comparison.amazon_reviews }}</td>
+                    <td>{{ comparison.amazon_discount }}</td>
+                    <td><a href="{{ comparison.amazon_link }}" target="_blank" class="btn btn-primary btn-sm">View on Amazon</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Flipkart Table -->
+    <div class="table-container">
+        <h2 class="text-center text-info"><i class="fas fa-store"></i> <b>Flipkart Products</b></h2>
+        <table class="table table-striped table-hover text-white">
+            <thead class="table-dark">
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Reviews</th>
+                    <th>Discount</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comparison in comparisons %}
+                <tr>
+                    <td>{{ comparison.product }}</td>
+                    <td>₹{{ comparison.flipkart_price }}</td>
+                    <td>{{ comparison.flipkart_reviews }}</td>
+                    <td>{{ comparison.flipkart_discount }}</td>
+                    <td><a href="{{ comparison.flipkart_link }}" target="_blank" class="btn btn-primary btn-sm">View on Flipkart</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Meesho Table -->
+    <div class="table-container">
+        <h2 class="text-center text-danger"><i class="fas fa-shopping-bag"></i> <b>Meesho Products</b></h2>
+        <table class="table table-striped table-hover text-white">
+            <thead class="table-dark">
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Reviews</th>
+                    <th>Discount</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comparison in comparisons %}
+                <tr>
+                    <td>{{ comparison.product }}</td>
+                    <td>₹{{ comparison.meesho_price }}</td>
+                    <td>{{ comparison.meesho_reviews }}</td>
+                    <td>{{ comparison.meesho_discount }}</td>
+                    <td><a href="{{ comparison.meesho_link }}" target="_blank" class="btn btn-primary btn-sm">View on Meesho</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Myntra Table -->
+    <div class="table-container">
+        <h2 class="text-center text-warning"><i class="fas fa-tshirt"></i> <b>Myntra Products</b></h2>
+        <table class="table table-striped table-hover text-white">
+            <thead class="table-dark">
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Reviews</th>
+                    <th>Discount</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comparison in comparisons %}
+                <tr>
+                    <td>{{ comparison.product }}</td>
+                    <td>₹{{ comparison.myntra_price }}</td>
+                    <td>{{ comparison.myntra_reviews }}</td>
+                    <td>{{ comparison.myntra_discount }}</td>
+                    <td><a href="{{ comparison.myntra_link }}" target="_blank" class="btn btn-primary btn-sm">View on Myntra</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Cheapest Option Table -->
+    <div class="table-container">
+        <h2 class="text-center text-success"><i class="fas fa-coins"></i> <b>Cheapest On</b></h2>
+        <table class="table table-striped table-hover text-white">
+            <thead class="table-dark">
+                <tr>
+                    <th>Product</th>
+                    <th>Cheaper On</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comparison in comparisons %}
+                <tr>
+                    <td>{{ comparison.product }}</td>
+                    <td class="cheapest">{{ comparison.cheaper_on }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
