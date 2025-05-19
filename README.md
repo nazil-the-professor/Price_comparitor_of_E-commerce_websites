@@ -17,12 +17,7 @@ A Django-based web application that allows users to compare prices of products a
 - **Web Scraping:** BeautifulSoup, Requests *(Update if others are used)*
 
 ## 📁 Project Structure
-Price_comparitor_of_E-commerce_websites/
-├── price_comparator/ # Django app for core functionalities
-├── scraper/ # Module for web scraping logic
-├── db.sqlite3 # SQLite database
-├── manage.py # Django's command-line utility
-└── README.md # Project documentation 
+<pre> ```text Price_comparitor_of_E-commerce_websites/ ├── price_comparator/ # Django app for core functionalities ├── scraper/ # Module for web scraping logic ├── db.sqlite3 # SQLite database ├── manage.py # Django's command-line utility └── README.md # Project documentation ``` </pre>
 
 ## ⚙️ Setup Instructions
 
