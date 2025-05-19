@@ -36,23 +36,28 @@ Price_comparitor_of_E-commerce_websites/
    cd Price_comparitor_of_E-commerce_websites
 
 2.**Create a virtual environment:**
+```text
   python -m venv env
   source env/bin/activate  # On Windows: env\Scripts\activate
-
+```
 3.**Install the dependencies:**
+```text
   pip install -r requirements.txt
-
+```
 4.**Apply migrations and run the server:**
+```text
   python manage.py migrate
   python manage.py runserver
-
+```
 5.**Access the application:**
+```text
   Open your browser and navigate to http://127.0.0.1:8000/.
-
-  🧪 Usage
+```
+🧪 **Usage**
+```text
   Enter the product name in the search bar.
 
   Click on the "Search" button.
 
   View and compare prices from different e-commerce websites.
-
+```
