@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import NoSuchElementException
 import time
-import random
+import random 
 from difflib import SequenceMatcher
 
 def get_driver():
