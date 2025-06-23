@@ -14,7 +14,7 @@ A Django-based web application that allows users to compare prices of products a
 - **Backend:** Python, Django
 - **Frontend:** HTML, CSS
 - **Database:** SQLite
-- **Web Scraping:** BeautifulSoup, Requests *(Update if others are used)*
+- **Web Scraping:** BeautifulSoup, Requests, Selenium
 
 ## 📁 Project Structure
 
